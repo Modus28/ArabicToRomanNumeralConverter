@@ -7,7 +7,7 @@ import scala.collection.immutable.ListMap
   *
   * Converts an input integer to its corresponding Arabic Numeral
   */
-object ArabicToRomanConverter extends App{
+object ArabicToRomanConverter {
   // Map of directly convertible Numeral - Arabic equivalents
     val arabicToRomanMap = ListMap (
       1000 -> "M", 900 -> "CM", 500 -> "D", 400 -> "CD", 100 -> "C", 90 -> "XC",
@@ -38,9 +38,15 @@ object ArabicToRomanConverter extends App{
     1 // If not found, we can always count by '1's
   }
 
-  for(i <- 1 to 100){
-    println(s"$i equals ${convert(i)} in Roman Numerals")
+  // Accepts user input from Stdin and prints roman numeral of input to Stdout
+  def main(args: Array[String]): Unit =  {
+    println("Enter an integer and press enter. Note that numbers over 5 digits will be very long")
+    for (input <- io.Source.stdin.getLines) {
+      try {
+        println(s"$input is represented by ${convert(input.toInt)} in Roman Numerals")
+      } catch {
+        case n: NumberFormatException => println("Not an integer")
+      }
+    }
   }
-
-
 }
