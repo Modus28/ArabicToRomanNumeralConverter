@@ -9,16 +9,14 @@ import scala.collection.immutable.ListMap
   */
 object ArabicToRomanConverter {
   // Map of directly convertible Numeral - Arabic equivalents
-    val arabicToRomanMap = ListMap (
-      1000 -> "M", 900 -> "CM", 500 -> "D", 400 -> "CD", 100 -> "C", 90 -> "XC",
+    val arabicToRomanMap = ListMap (1000 -> "M", 900 -> "CM", 500 -> "D", 400 -> "CD", 100 -> "C", 90 -> "XC",
         50 -> 'L',  40 -> "XL",  10 -> "X",   9 -> "IX",   5 -> "V", 4 -> "IV" , 1 -> "I" )
-
 
   /**
     * Converts an integer to its roman numeral equivalent
     * @param toConvert the input int
-    * @param roman roman numeral equivalent
-    * @return
+    * @param roman the current string to append to, defaults to ""
+    * @return roman numeral equivalent
     */
   @tailrec
   def convert(toConvert: Int, roman: String = ""): String = {
