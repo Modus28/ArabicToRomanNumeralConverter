@@ -1,0 +1,36 @@
+### Scala ###
+.scala_dependencies
+.worksheet
+*.class
+
+
+# Package Files #
+*.jar
+*.log
+*.log.*
+*.iml
+*.ipr
+*.iws
+.idea
+
+
+
+# Generated Folders
+build/
+report/
+doc/
+classes/
+out/
+target/
+project/plugins
+project/target
+.cache/
+.history/
+.lib/
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project
+
